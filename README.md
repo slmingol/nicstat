@@ -26,6 +26,28 @@ attempt to keep this tree in sync with upstream.
 
 Pull requests are welcome for any additional bugs or features as well.
 
+This fork of the fork
+=====================
+
+This fork exists to cover how to setup your Linux box (CentOS 7.x) specifically so you can compile this package.
+
+```
+$ yum install glibc-devel.i686
+$ yum install libgcc.i686
+```
+
+The nicstat app requires `stubs-32.h`
+
+```
+$ repoquery -qf */stubs-32.h
+```
+
+You can then compile it:
+
+```
+$ make -f Makefile.Linux
+```
+
 License
 =======
 
